@@ -18,11 +18,6 @@ export class HeroesComponent implements OnInit {
     private _messageSvc: MessageService,
   ) { }
 
-  onSelect(hero: Hero): void {
-    this.selectedHero = hero;
-    this._messageSvc.add(`HeroesComponent: Selected hero id=${hero.id}`);
-  }
-
   getHeroes(): void {
     this._heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
